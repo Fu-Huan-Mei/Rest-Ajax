@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX简介</title>
+</head>
+<body>
+    <h1>这是我的客户端</h1>
+    <!--把服务器中的数据在网页中显示出来-->
+    <button id="btn">点我加载数据</button>
+    <script>
+        //点击按钮以后，自动加载服务器数据
+        const btn = document.getElementById("btn")
+        btn.onclick = ()=>{
+            //向服务器发送请求
+/*AJAX
+1、简介：在js中向服务器发送请求加载数据的技术叫AJAX（异步的JS和xml
+2、xml：早期AJAX使用的数据交换格式 eg:<student><name>孙悟空</name></student>
+3、json：目前数据格式，  eg:{"name":"孙悟空"}
+4、可以选择的方案呢：XMLHTTPRequest(xhr)、Fetch、Axios*/
+//（1）xhr
+//创建一个新的xhr对象，xhr表示请求信息
+const xhr = new XMLHttpRequest()
+//设置请求信息xhr.open("方法","服务器的路径")  服务器的路径？？我没有创建出来
+xhr.open("GET","#")
+//发送请求
+xhr.send()
+/*COPS（跨域资源共享）
+1、跨域请求：如果两个网站的完整域名不同  eg:a网站：http://haha.com  b网站:http://heihei.com
+2、跨域检查：协议、域名、端口号：只要3个有一个不同，就叫跨域
+3、跨域问题：当我们通过AJAX去发送跨域请求时，浏览器为了服务器的安全，会阻止JS读取到服务器的数据
+4、解决方案：
+（1）在服务器中设置一个允许跨域的头：Access-Control-Allow-Origin
+（2）允许请求的方式：Access-Control-Allow-Methods
+（3）允许传递的请求头：Access-Control-Allow-Headers*/
+        }
+    </script>
+</body>
+</html>

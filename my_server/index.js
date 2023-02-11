@@ -10,7 +10,13 @@ app.use(express.urlencodeed({extended:true}))
 //解析json格式请求体的中间件
 app.use(express.json())
 //定义学生信息相关的路由
+app.use((req,res)=>{
+    res.setHeader("Access-Control-Allow-Origin","*")
+})
 app.get("/students",(req,res)=>{
+    // res.setHeader("Access-Control-Allow-Origin","*")设置响应头
+    //Access-Control-Allow-Origin只能设置一个指定值
+    res.setHeader("Access-Control-Allow-Origin","*")
     console.log("收到students的get请求")
     //返回学生信息
     res.send(STU_ARR)
